@@ -5,13 +5,10 @@ var party_members : Array
 
 func _ready():
 	party_members.clear()
-	var children = get_children()
-	var party : Array
 	for partyMember in get_children():
 		if partyMember is CharacterBody2D:
 			party_members.append(partyMember)
-	party = party_members
-	state_manager.init(party_members)
+	state_manager.init(self)
 
 func _unhandled_input(event: InputEvent) -> void:
 	state_manager.input(event)

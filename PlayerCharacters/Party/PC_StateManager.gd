@@ -9,17 +9,18 @@ var baseState = preload("res://PlayerCharacters/Party/PC_BaseStates.gd")
 
 var current_state : PC_BaseStates
 
+func init(party) -> void:
+	#party_members
+	for child in get_children():
+		child.party = party.party_members
+	change_state(baseState.PC_State.Idle)
+
 func change_state(newState : int) -> void:
 	if current_state:
 		current_state.exit()
 		
 	current_state = states[newState]
 	current_state.enter()
-
-func init(partyArray) -> void:
-	for child in get_children():
-		child.party = partyArray
-	change_state(baseState.PC_State.Idle)
 
 func input(event: InputEvent) -> void:
 	var new_state = current_state.input(event)
