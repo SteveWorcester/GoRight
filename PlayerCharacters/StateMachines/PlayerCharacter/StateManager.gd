@@ -1,19 +1,16 @@
 extends Node
 
-var baseState = preload("res://PlayerCharacters/Party/PC_BaseStates.gd")
-
 @onready var states = {
-	baseState.PC_State.Idle: $Idle,
-	baseState.PC_State.Moving: $Moving
+	State_Base.Player_State.Idle: $Idle,
+	State_Base.Player_State.Moving: $Moving
 }
 
-var current_state : PC_BaseStates
+var current_state : State_Base
 
-func init(party) -> void:
-	#party_members
+func init(player) -> void:
 	for child in get_children():
-		child.party = party.party_members
-	change_state(baseState.PC_State.Idle)
+		child.character = player
+	change_state(State_Base.Player_State.Idle)
 
 func change_state(newState : int) -> void:
 	if current_state:
@@ -24,13 +21,10 @@ func change_state(newState : int) -> void:
 
 func input(event: InputEvent) -> void:
 	var new_state = current_state.input(event)
-	if new_state != baseState.PC_State.Null:
+	if new_state != State_Base.Player_State.Null:
 		change_state(new_state)
 		
 func physics_process(delta: float):
 	var new_state = current_state.physics_process(delta)
-	if new_state != baseState.PC_State.Null:
+	if new_state != State_Base.Player_State.Null:
 		change_state(new_state)
-		
-func process(delta: float):
-	current_state.process(delta)

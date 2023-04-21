@@ -1,7 +1,7 @@
-class_name PC_BaseStates
+class_name State_Base
 extends Node
 
-enum PC_State {
+enum Player_State {
 	Null,
 	Idle,
 	Moving,
@@ -10,7 +10,7 @@ enum PC_State {
 	InTown
 }
 
-var party : Array
+var character : CharacterBody2D
 
 func enter() -> void:
 	#player.animations.play(animation_name)
@@ -20,10 +20,10 @@ func exit() -> void:
 	pass
 	
 func input(event: InputEvent) -> int:
-	return PC_State.Null
+	return Player_State.Null
 	
 func process(delta: float) -> int:
-	return PC_State.Null
+	return Player_State.Null
 	
 func physics_process(delta: float) -> int: 
-	return PC_State.Null
+	return Player_State.Null

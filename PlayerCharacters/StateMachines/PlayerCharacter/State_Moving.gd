@@ -1,18 +1,18 @@
-extends PC_BaseStates
+extends State_Base
 
 @export
 var move_speed : float = 300
 
 func input(event : InputEvent) -> int:
 	if Input.is_action_just_pressed("interact") || Input.is_action_just_pressed("up"):
-		return PC_State.Interacting
+		return Player_State.Interacting
 	if !Input.is_anything_pressed():
-		return PC_State.Idle
+		return Player_State.Idle
 	
-	return PC_State.Null
+	return Player_State.Null
 	
 func process(delta:float) -> int:
-	return PC_State.Null
+	return Player_State.Null
 
 func physics_process(delta: float) -> int:
 	var moveDirection : float
@@ -23,10 +23,9 @@ func physics_process(delta: float) -> int:
 	if !Input.is_anything_pressed():
 		moveDirection = 0
 	
-	for member in party:
-		member.position.x += moveDirection * move_speed * delta
+	character.position.x += moveDirection * move_speed * delta
 	
 	if moveDirection == 0:
-		return PC_State.Idle
+		return Player_State.Idle
 		
-	return PC_State.Null
+	return Player_State.Null
