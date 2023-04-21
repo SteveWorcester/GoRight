@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://j3naes3m3an2"]
+
+[ext_resource type="Script" path="res://StateMachines/PlayerCharacter/StateManager.gd" id="1_ggxyc"]
+[ext_resource type="Script" path="res://StateMachines/PlayerCharacter/State_Idle.gd" id="2_tdjrl"]
+[ext_resource type="Script" path="res://StateMachines/PlayerCharacter/State_Moving.gd" id="3_ntalc"]
+
+[node name="StateManager" type="Node"]
+script = ExtResource("1_ggxyc")
+
+[node name="Idle" type="Node" parent="."]
+script = ExtResource("2_tdjrl")
+
+[node name="Moving" type="Node" parent="."]
+script = ExtResource("3_ntalc")

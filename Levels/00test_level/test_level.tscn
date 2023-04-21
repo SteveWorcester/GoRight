@@ -21,4 +21,7 @@ texture = ExtResource("1_opybg")
 [node name="Party" type="Node" parent="."]
 
 [node name="Fighter" parent="Party" instance=ExtResource("2_j83r3")]
-position = Vector2(207, 377)
+position = Vector2(511, 283)
+
+[node name="Fighter2" parent="Party" instance=ExtResource("2_j83r3")]
+position = Vector2(343, 283)
