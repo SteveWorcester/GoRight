@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://56nt3id35ilu"]
+
+[ext_resource type="Texture2D" uid="uid://je32gibv6d7f" path="res://GameFiles/Items/Fighter/axe.png" id="1_6u7vu"]
+
+[node name="Item" type="Node2D"]
+z_index = 1
+
+[node name="InventoryImage" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("1_6u7vu")
