@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GoRight"
-run/main_scene="res://Levels/00test_level/test_level.tscn"
+run/main_scene="res://Levels/Stage1/Level1/Stage1_Level1.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
 config/icon="res://icon.svg"
 
