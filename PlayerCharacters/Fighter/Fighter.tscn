@@ -12,6 +12,7 @@ scale = Vector2(5, 5)
 script = ExtResource("1_kxfsd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
 texture = ExtResource("2_gj7yq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

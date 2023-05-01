@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://blb281fcq5y34"]
+
+[ext_resource type="Texture2D" uid="uid://cm16jkn4dr6l7" path="res://Levels/Stage1/Enemies/enemy_EvilRabbit.png" id="1_mgdic"]
+
+[node name="EvilRabbit" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
+texture = ExtResource("1_mgdic")
