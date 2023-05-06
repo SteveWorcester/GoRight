@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 const SlotClass = preload("res://GameFiles/InventoryMenu/InventorySlot.gd")
 @onready var inventory_slots = $GridContainer
