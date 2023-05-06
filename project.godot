@@ -11,14 +11,15 @@ config_version=5
 [application]
 
 config/name="GoRight"
-run/main_scene="res://Levels/Stage1/Level1/Stage1_Level1.tscn"
+run/main_scene="res://GameFiles/BaseGame/BaseGame.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=3840
-window/size/viewport_height=2160
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
 
 [dotnet]
 

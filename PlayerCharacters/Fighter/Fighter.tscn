@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://jm7jdqawecaw" path="res://StateMachines/PlayerCharacter/Scene_StateManager.tscn" id="2_labjm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6adst"]
-size = Vector2(127, 129)
+size = Vector2(159.4, 318.8)
 
 [node name="Fighter" type="CharacterBody2D"]
 scale = Vector2(5, 5)
@@ -16,7 +16,7 @@ scale = Vector2(5, 5)
 texture = ExtResource("2_gj7yq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0.5)
+position = Vector2(0.299999, 0.400015)
 shape = SubResource("RectangleShape2D_6adst")
 
 [node name="StateManager" parent="." instance=ExtResource("2_labjm")]

@@ -8,21 +8,29 @@
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oxugr"]
 texture = ExtResource("3_w8smc")
 
-[node name="Inventory" type="Node2D"]
+[node name="Inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
 script = ExtResource("1_q0uc7")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = 572.0
-offset_top = 462.0
-offset_right = 1152.0
-offset_bottom = 647.0
+offset_left = -571.0
+offset_top = -175.0
+offset_right = -1.0
+offset_bottom = -1.0
 texture = ExtResource("2_i23vs")
 
 [node name="GridContainer" type="GridContainer" parent="."]
-offset_left = 574.0
-offset_top = 467.0
-offset_right = 1151.0
-offset_bottom = 647.0
+offset_left = -571.0
+offset_top = -175.0
+offset_right = 6.0
+offset_bottom = 5.0
 theme_override_constants/h_separation = 8
 theme_override_constants/v_separation = 8
 columns = 8

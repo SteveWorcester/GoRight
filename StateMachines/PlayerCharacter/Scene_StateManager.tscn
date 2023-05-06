@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://j3naes3m3an2"]
+[gd_scene load_steps=4 format=3 uid="uid://jm7jdqawecaw"]
 
 [ext_resource type="Script" path="res://StateMachines/PlayerCharacter/StateManager.gd" id="1_ggxyc"]
 [ext_resource type="Script" path="res://StateMachines/PlayerCharacter/State_Idle.gd" id="2_tdjrl"]
