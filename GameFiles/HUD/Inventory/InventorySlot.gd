@@ -1,7 +1,7 @@
 extends Panel
 
-var default_texture = preload("res://GameFiles/InventoryMenu/InventorySlot_Usable.png")
-var empty_texture = preload("res://GameFiles/InventoryMenu/Inventory_Background.png")
+var default_texture = preload("res://GameFiles/HUD/Inventory/InventorySlot_Usable.png")
+var empty_texture = preload("res://GameFiles/HUD/Inventory/Inventory_Background.png")
 
 var default_style : StyleBoxTexture = null
 var empty_style : StyleBoxTexture = null

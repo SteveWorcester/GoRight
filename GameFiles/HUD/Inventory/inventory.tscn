@@ -1,9 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cip7yq2ipu76w"]
+[gd_scene load_steps=6 format=3]
 
 [ext_resource type="Script" path="res://Party/Party_Inventory.gd" id="1_q0uc7"]
-[ext_resource type="Texture2D" uid="uid://syxe44ue1cu7" path="res://GameFiles/InventoryMenu/Inventory_Background.png" id="2_i23vs"]
-[ext_resource type="Texture2D" uid="uid://ywjemlwryv7f" path="res://GameFiles/InventoryMenu/InventorySlot_Usable.png" id="3_w8smc"]
-[ext_resource type="Script" path="res://GameFiles/InventoryMenu/InventorySlot.gd" id="4_snij8"]
+[ext_resource type="Texture2D" uid="uid://syxe44ue1cu7" path="res://GameFiles/HUD/Inventory/Inventory_Background.png" id="2_i23vs"]
+[ext_resource type="Texture2D" uid="uid://ywjemlwryv7f" path="res://GameFiles/HUD/Inventory/InventorySlot_Usable.png" id="3_w8smc"]
+[ext_resource type="Script" path="res://GameFiles/HUD/Inventory/InventorySlot.gd" id="4_snij8"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oxugr"]
 texture = ExtResource("3_w8smc")
