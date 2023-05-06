@@ -1,9 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://diiopg71gyybt"]
-
-[ext_resource type="PackedScene" uid="uid://cemdou5f0rg0e" path="res://GameFiles/BaseGame/hud.tscn" id="1_o8qvl"]
+[gd_scene format=3 uid="uid://diiopg71gyybt"]
 
 [node name="PlayerCam" type="Camera2D"]
 limit_smoothed = true
-
-[node name="Hud" parent="." instance=ExtResource("1_o8qvl")]
-follow_viewport_enabled = false

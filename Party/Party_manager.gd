@@ -6,8 +6,7 @@ enum classes {
 
 @onready var camera = preload("res://GameFiles/BaseGame/player_cam.tscn")
 var currentCam
-
-
+var distanceTraveled = 0
 
 func _ready() -> void:
 	switch_camera_to_party_leader()
@@ -24,19 +23,23 @@ func switch_camera_to_party_leader() -> void:
 			currentCam.make_current()
 			break
 
-func add_party_member(classToAdd : classes) -> bool:
+func can_add_party_member() -> bool:
 	if (get_child_count() >= 4):
 		party_error("Too many members in the party.")
 		return false
 	
 	return true
 
-func remove_party_member(indexToRemove : int) -> bool:
+func can_remove_party_member(indexToRemove : int) -> bool:
 	if (get_child_count() <= 1):
 		party_error("Cannot remove any more players from your party.")
 		return false
 	get_child(indexToRemove).queue_free()
 	return true
 
-func party_error(outputText):
+func load_party(jsonFileName : String):
+	pass
+
+func party_error(errorMessage : String):
+	print(errorMessage)
 	pass
