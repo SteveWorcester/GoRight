@@ -1,13 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://ckaiych8uqtj5"]
+[gd_scene load_steps=16 format=3 uid="uid://ckaiych8uqtj5"]
 
 [ext_resource type="Script" path="res://GameFiles/MainMenu/BackgroundARContainer.gd" id="1_5qy3q"]
-[ext_resource type="Texture2D" uid="uid://dkns6n3efmcfh" path="res://GameFiles/MainMenu/main_menu_background.png" id="1_ghsah"]
+[ext_resource type="Script" path="res://GameFiles/MainMenu/Main.gd" id="1_i5f3i"]
 [ext_resource type="FontFile" uid="uid://yikynavu4aeb" path="res://GameFiles/UI_Theme/ui_typeface_main.ttf" id="1_rqjwe"]
+[ext_resource type="Texture2D" uid="uid://cyuf0ljv06bux" path="res://GameFiles/MainMenu/main_menu_background_2.png" id="2_6nctu"]
 [ext_resource type="Texture2D" uid="uid://bt06da3iktkbd" path="res://GameFiles/UI_Theme/ui_button_disabled.png" id="2_hghea"]
 [ext_resource type="Texture2D" uid="uid://dg3pta43ggmm2" path="res://GameFiles/UI_Theme/ui_button_focus.png" id="3_3c642"]
 [ext_resource type="Script" path="res://GameFiles/MainMenu/Actions.gd" id="3_185gt"]
 [ext_resource type="Texture2D" uid="uid://cw2xqdju2dr83" path="res://GameFiles/UI_Theme/ui_button_hover.png" id="4_d557m"]
 [ext_resource type="Texture2D" uid="uid://dlgc4imk8cfpq" path="res://GameFiles/UI_Theme/ui_button_base.png" id="6_tlj43"]
+[ext_resource type="PackedScene" uid="uid://cyvaf0o7o8erk" path="res://GameFiles/BaseGame/BaseGame.tscn" id="9_rexrm"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ynjva"]
 texture = ExtResource("2_hghea")
@@ -626,14 +628,17 @@ Window/icons/close = null
 Window/icons/close_pressed = null
 Window/styles/embedded_border = null
 
-[node name="MainMenu" type="Node"]
+[node name="MainMenu" type="Node" groups=["mainMenu"]]
+script = ExtResource("1_i5f3i")
 
-[node name="ARContainer" type="AspectRatioContainer" parent="."]
+[node name="ARContainer" type="AspectRatioContainer" parent="." groups=["mainMenu"]]
+custom_minimum_size = Vector2(1280, 720)
+layout_direction = 2
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -721.0
-offset_right = 1286.0
+offset_top = -5781.0
+offset_right = 5775.0
 grow_vertical = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -642,15 +647,15 @@ alignment_horizontal = 0
 alignment_vertical = 2
 script = ExtResource("1_5qy3q")
 
-[node name="Background" type="TextureRect" parent="ARContainer"]
+[node name="Background" type="TextureRect" parent="ARContainer" groups=["mainMenu"]]
 layout_mode = 2
-texture = ExtResource("1_ghsah")
+texture = ExtResource("2_6nctu")
 expand_mode = 2
 
-[node name="Actions" type="CanvasLayer" parent="."]
+[node name="Actions" type="CanvasLayer" parent="." groups=["mainMenu"]]
 script = ExtResource("3_185gt")
 
-[node name="Buttons" type="VBoxContainer" parent="Actions"]
+[node name="Buttons" type="VBoxContainer" parent="Actions" groups=["mainMenu"]]
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
@@ -662,35 +667,37 @@ offset_bottom = 314.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="StartGame" type="Button" parent="Actions/Buttons"]
+[node name="StartGame" type="Button" parent="Actions/Buttons" groups=["mainMenu"]]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 focus_mode = 0
 theme = SubResource("Theme_cpcsc")
 text = "Start Game"
 
-[node name="LoadGame" type="Button" parent="Actions/Buttons"]
+[node name="LoadGame" type="Button" parent="Actions/Buttons" groups=["mainMenu"]]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 focus_mode = 0
 theme = SubResource("Theme_cpcsc")
 text = "Load Game"
 
-[node name="Options" type="Button" parent="Actions/Buttons"]
+[node name="Options" type="Button" parent="Actions/Buttons" groups=["mainMenu"]]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 focus_mode = 0
 theme = SubResource("Theme_cpcsc")
 text = "Options"
 
-[node name="Nothing" type="Button" parent="Actions/Buttons"]
+[node name="Nothing" type="Button" parent="Actions/Buttons" groups=["mainMenu"]]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 focus_mode = 0
 theme = SubResource("Theme_cpcsc")
 text = "Nothing..."
 
-[connection signal="pressed" from="Actions/Buttons/StartGame" to="Actions" method="_on_start_game_pressed"]
+[node name="BaseGame" parent="." instance=ExtResource("9_rexrm")]
+
+[connection signal="button_up" from="Actions/Buttons/StartGame" to="Actions" method="_on_start_game_button_up"]
 [connection signal="pressed" from="Actions/Buttons/LoadGame" to="Actions" method="_on_load_game_pressed"]
 [connection signal="pressed" from="Actions/Buttons/Options" to="Actions" method="_on_options_pressed"]
 [connection signal="pressed" from="Actions/Buttons/Nothing" to="Actions" method="_on_nothing_pressed"]

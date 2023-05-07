@@ -1,23 +1,26 @@
-[gd_scene load_steps=6 format=3 uid="uid://cyvaf0o7o8erk"]
+[gd_scene load_steps=7 format=3 uid="uid://cyvaf0o7o8erk"]
 
-[ext_resource type="PackedScene" uid="uid://p13cddxl1ff2" path="res://Levels/Stage1/Level1/Stage1_Level1.tscn" id="1_8fff1"]
+[ext_resource type="Script" path="res://GameFiles/BaseGame/BaseGame.gd" id="1_gxo56"]
 [ext_resource type="Script" path="res://GameFiles/BaseGame/GameController.gd" id="2_1l0k2"]
 [ext_resource type="Script" path="res://Party/Party_manager.gd" id="2_df4py"]
 [ext_resource type="PackedScene" uid="uid://n3m7uva4mbvp" path="res://PlayerCharacters/Fighter/Fighter.tscn" id="2_k3n35"]
+[ext_resource type="Script" path="res://Levels/LevelManager.gd" id="2_wy3j6"]
 [ext_resource type="PackedScene" uid="uid://dn014kb0cft1a" path="res://GameFiles/HUD/hud.tscn" id="3_1yx1l"]
 
-[node name="BaseGame" type="Node"]
+[node name="BaseGame" type="Node" groups=["baseGame"]]
+script = ExtResource("1_gxo56")
 
-[node name="Stage1_Level1" parent="." instance=ExtResource("1_8fff1")]
+[node name="LevelManager" type="Node" parent="." groups=["baseGame"]]
+script = ExtResource("2_wy3j6")
 
-[node name="GameController" type="Node" parent="."]
+[node name="GameController" type="Node" parent="." groups=["baseGame"]]
 script = ExtResource("2_1l0k2")
 
 [node name="Hud" parent="GameController" instance=ExtResource("3_1yx1l")]
 
-[node name="Party" type="Node" parent="GameController"]
+[node name="Party" type="Node" parent="GameController" groups=["baseGame"]]
 script = ExtResource("2_df4py")
 
-[node name="Fighter" parent="GameController/Party" instance=ExtResource("2_k3n35")]
+[node name="Fighter" parent="GameController/Party" groups=["Savegame"] instance=ExtResource("2_k3n35")]
 position = Vector2(240, 252)
 scale = Vector2(1, 1)
