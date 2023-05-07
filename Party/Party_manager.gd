@@ -20,7 +20,9 @@ func switch_camera_to_party_leader() -> void:
 		if character is CharacterBody2D:
 			currentCam = camera.instantiate()
 			character.add_child(currentCam)
+			currentCam.set_anchor_mode(1) #ANCHOR_MODE_FIXED_TOP_LEFT
 			currentCam.make_current()
+			currentCam.add_to_group("baseGame")
 			break
 
 func can_add_party_member() -> bool:

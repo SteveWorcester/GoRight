@@ -1,10 +1,8 @@
 extends Player_Controller
 
-var className = "Fighter";
-var characterName = "";
+func _ready() -> void:
+	await super._ready()
+	className = "Axe Master"
 
-var equipment_head
-var equipment_chest
-var equipment_legs
-var equipment_mainHand
-var equipment_offHand
+func save():
+	get_character_save_data(self)

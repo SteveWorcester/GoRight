@@ -7,16 +7,16 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6adst"]
 size = Vector2(159.4, 318.8)
 
-[node name="Fighter" type="CharacterBody2D"]
+[node name="Fighter" type="CharacterBody2D" groups=["baseGame"]]
 scale = Vector2(5, 5)
 script = ExtResource("1_kxfsd")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["baseGame"]]
 scale = Vector2(5, 5)
 texture = ExtResource("2_gj7yq")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["baseGame"]]
 position = Vector2(0.299999, 0.400015)
 shape = SubResource("RectangleShape2D_6adst")
 
-[node name="StateManager" parent="." instance=ExtResource("2_labjm")]
+[node name="StateManager" parent="." groups=["baseGame"] instance=ExtResource("2_labjm")]
