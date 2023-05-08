@@ -1,29 +1,15 @@
+class_name Level_Base
 extends Node2D
 
-var randomEncounterPercent : int = 100
-var randomEncounterDistanceInPx : int = 100
+@onready var gameController = get_parent().get_parent().get_node("GameController")
 
-@onready var party = $Party
-var distanceCounter = 0
-var partyLeader : CharacterBody2D
+var eventLevels = {
+	"event_chance": null,
+	"enemy_chance": null,
+	"trasure_chance": null,
+	"distance_per_chance_roll": null,
+	"stage_length" : null
+}
 
 func _ready() -> void:
-	partyLeader = party.get_child(0)
-
-func setPartyLeader(newPartyLeader):
-	partyLeader = newPartyLeader
-
-func roll_for_encounter() -> bool:
-	var rand = randi_range(1,100)
-	if rand >= randomEncounterPercent:
-		return true
-	return false
-
-func reset_distance_counter():
-	distanceCounter = 0
-
-func change_enounter_percent(changePercent : int):
-	randomEncounterPercent += changePercent
-
-func change_encounter_distance(changeDistance : int):
-	randomEncounterDistanceInPx += changeDistance
+	pass

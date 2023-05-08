@@ -2,6 +2,7 @@ extends Node
 
 var baseUrl = "res://Levels/"
 var currentScene
+@onready var gameController = get_parent().get_node("GameController")
 
 func _ready() -> void:
 	pass

@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://chx1kbhxph55n"]
+[gd_scene load_steps=17 format=3 uid="uid://chx1kbhxph55n"]
 
 [ext_resource type="Texture2D" uid="uid://8ka6v68rw1nu" path="res://Levels/Stage1/Common/env_Stage1_Cloud.png" id="1_rrrhc"]
+[ext_resource type="Script" path="res://Levels/Stage1/Level1/S1_L1.gd" id="1_uq4d8"]
 [ext_resource type="Texture2D" uid="uid://bcxa2uvpny4h6" path="res://Levels/Stage1/Common/env_Stage1_Sky.png" id="2_e5ryl"]
 [ext_resource type="Texture2D" uid="uid://e36ssc5y6wq1" path="res://Levels/Stage1/Common/env_Stage1_Tree.png" id="3_17ty2"]
 [ext_resource type="Texture2D" uid="uid://cwfbdn7jp0svh" path="res://Levels/Stage1/Common/env_Stage1_Background.png" id="4_opfwl"]
@@ -49,7 +50,8 @@ texture_region_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_r4uod")
 sources/1 = SubResource("TileSetAtlasSource_cwst6")
 
-[node name="S01_L01" type="Node"]
+[node name="S01_L01" type="Node2D"]
+script = ExtResource("1_uq4d8")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

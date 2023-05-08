@@ -52,15 +52,15 @@ func save_game(saveFileName : String):
 
 func startGame():	
 	levelManager.load_level(1,1)
-	make_visible(true)
+	make_baseGame_visible(true)
 
-func make_visible(makeVisible : bool):
+func make_baseGame_visible(makeVisible : bool):
 	var baseGameGroup = get_tree().get_nodes_in_group("baseGame")
 	var mainMenuGroup = get_tree().get_nodes_in_group("mainMenu")
 	for node in baseGameGroup:
 		if "visible" in node:
-			node.visible = true
+			node.visible = makeVisible
 	for node in mainMenuGroup:
 		if "visible" in node:
-			node.visible = false
+			node.visible = !makeVisible
 	party.switch_camera_to_party_leader()
