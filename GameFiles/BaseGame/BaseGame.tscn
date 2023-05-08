@@ -18,7 +18,7 @@ script = ExtResource("2_1l0k2")
 
 [node name="Hud" parent="GameController" instance=ExtResource("3_1yx1l")]
 
-[node name="Party" type="Node" parent="GameController" groups=["baseGame"]]
+[node name="Party" type="Node2D" parent="GameController" groups=["baseGame"]]
 script = ExtResource("2_df4py")
 
 [node name="Fighter" parent="GameController/Party" groups=["Savegame"] instance=ExtResource("2_k3n35")]

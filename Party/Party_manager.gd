@@ -1,12 +1,13 @@
-extends Node
+extends Node2D
 
 enum classes {
 	Axemaster
 }
 
 @onready var camera = preload("res://GameFiles/BaseGame/player_cam.tscn")
+@onready var partyLeader = get_child(0)
+
 var currentCam
-var distanceTraveled = 0
 
 func _ready() -> void:
 	switch_camera_to_party_leader()
