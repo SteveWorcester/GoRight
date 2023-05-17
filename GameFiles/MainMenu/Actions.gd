@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 @onready var baseGame = get_parent().get_node("BaseGame")
-@onready var mainMenuBackground = get_parent().get_node("ARContainer")
+@onready var mainMenuBackground = get_parent().get_node("BackgroundContainer")
 @onready var mainMenuUi = get_parent().get_node("Actions")
 
 @onready var mainMenuGroup = get_tree().get_nodes_in_group("mainMenu")

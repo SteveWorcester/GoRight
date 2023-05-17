@@ -1,6 +1,6 @@
 extends Node
 
-@onready var levelManager = $LevelManager
+@onready var levelManager = $GameController/LevelManager
 @onready var gameController = $GameController
 @onready var party = $GameController/Party
 @onready var hud = $GameController/Hud
@@ -19,16 +19,17 @@ var gameDictFormat = {
 	"CharactersInTown" : "" #this should be an array of character data
 }
 
-func load_game(saveFileName):
+func load_game(saveFileName) -> bool:
 	var realDirectory = OS.get_user_data_dir()
 	var loadGameUrl = "user://%s".format([saveFileName])
 	if not FileAccess.file_exists(loadGameUrl):
 		print("filename %s not found in %s.".format([saveFileName, realDirectory]))
-		return
+		return false
 	
-	var save_nodes = get_tree().get_nodes_in_group("Persist")
+	var save_nodes = get_tree().get_nodes_in_group("saveGameItem") #group not set up yet
 	var fileString = FileAccess.get_file_as_string(loadGameUrl)
 	var fileDict = JSON.parse_string(fileString) 
+	return true
 	pass
 
 func save_game(saveFileName : String):

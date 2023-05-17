@@ -7,5 +7,4 @@ func _ready() -> void:
 	eventLevels["enemy_chance"] = 50
 	eventLevels["treasure_chance"] = 30
 	eventLevels["stage_length"] = 100
-
-	await gameController.set_event_levels(eventLevels)
+	setLevelsComplete()

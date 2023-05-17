@@ -631,7 +631,7 @@ Window/styles/embedded_border = null
 [node name="MainMenu" type="Node" groups=["mainMenu"]]
 script = ExtResource("1_i5f3i")
 
-[node name="ARContainer" type="AspectRatioContainer" parent="." groups=["mainMenu"]]
+[node name="BackgroundContainer" type="AspectRatioContainer" parent="." groups=["mainMenu"]]
 custom_minimum_size = Vector2(1280, 720)
 layout_direction = 2
 anchors_preset = 2
@@ -647,7 +647,7 @@ alignment_horizontal = 0
 alignment_vertical = 2
 script = ExtResource("1_5qy3q")
 
-[node name="Background" type="TextureRect" parent="ARContainer" groups=["mainMenu"]]
+[node name="BackgroundArt" type="TextureRect" parent="BackgroundContainer" groups=["mainMenu"]]
 layout_mode = 2
 texture = ExtResource("2_6nctu")
 expand_mode = 2

@@ -10,11 +10,11 @@
 [node name="BaseGame" type="Node" groups=["baseGame"]]
 script = ExtResource("1_gxo56")
 
-[node name="LevelManager" type="Node" parent="." groups=["baseGame"]]
-script = ExtResource("2_wy3j6")
-
 [node name="GameController" type="Node" parent="." groups=["baseGame"]]
 script = ExtResource("2_1l0k2")
+
+[node name="LevelManager" type="Node" parent="GameController" groups=["baseGame"]]
+script = ExtResource("2_wy3j6")
 
 [node name="Hud" parent="GameController" instance=ExtResource("3_1yx1l")]
 
