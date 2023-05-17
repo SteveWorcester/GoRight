@@ -35,16 +35,6 @@ func _process(delta: float) -> void:
 	
 	pass
 
-func set_event_levels(eventLevels):
-	if eventLevels["distance_per_chance_roll"] == 1000 or eventLevels["event_chance"] == 1000 or eventLevels["enemy_chance"] == 1000 or eventLevels["treasure_chance"] == 1000:
-		print("One or more of the event levels (treasure/enemy chance) have not been set")
-	randomEventCheckinDistance = eventLevels["distance_per_chance_roll"]
-	eventChance = eventLevels["event_chance"]
-	enemyChance = eventLevels["enemy_chance"]
-	treasureChance = eventLevels["treasure_chance"]
-	stageLength = eventLevels["stage_length"]
-	pass
-
 func begin_combat():
 	pass
 
