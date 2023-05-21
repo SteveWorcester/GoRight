@@ -21,6 +21,6 @@ script = ExtResource("2_wy3j6")
 [node name="Party" type="Node2D" parent="GameController" groups=["baseGame"]]
 script = ExtResource("2_df4py")
 
-[node name="Fighter" parent="GameController/Party" groups=["Savegame"] instance=ExtResource("2_k3n35")]
-position = Vector2(240, 252)
+[node name="Fighter" parent="GameController/Party" instance=ExtResource("2_k3n35")]
+position = Vector2(240, 282)
 scale = Vector2(1, 1)
