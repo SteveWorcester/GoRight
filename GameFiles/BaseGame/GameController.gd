@@ -22,13 +22,13 @@ func _process(delta: float) -> void:
 	distanceFromOrigin = party.partyLeader.position.x - travelOrigin.x
 	movementTracker += abs(party.partyLeader.position.x - positionLastUpdate.x)
 	if int(movementTracker) % randomEventCheckinDistance == 0:
-		#combat chance; event chance
+		#dont build here; activate here
 		pass
 	if  int(distanceFromOrigin) % eventChance == 0 and treasureAvailable:
-		#treasure
+		#dont build here; activate here
 		pass
 	if distanceFromOrigin >= stageLength:
-		#end level
+		#dont build here; activate here
 		pass
 	
 	positionLastUpdate = party.partyLeader.position
