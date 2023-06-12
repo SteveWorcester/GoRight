@@ -5,20 +5,6 @@ extends Node
 @onready var party = $GameController/Party
 @onready var hud = $GameController/Hud
 
-var newGameDict
-
-var gameDictFormat = {
-	"saveFileName" : "",
-	"StageName" : "",
-	"LevelName" : "",
-	"NodeNumber" : "",
-	"InTransit" : false,
-	"InTransitDistance" : 0,
-	"PartyLeaderName" : "",
-	"PartyMembers" : "", #this should be an array of character data
-	"CharactersInTown" : "" #this should be an array of character data
-}
-
 func load_game(saveFileName) -> bool:
 	var realDirectory = OS.get_user_data_dir()
 	var loadGameUrl = "user://%s".format([saveFileName])

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cyvaf0o7o8erk"]
+[gd_scene load_steps=8 format=3 uid="uid://cyvaf0o7o8erk"]
 
 [ext_resource type="Script" path="res://GameFiles/BaseGame/BaseGame.gd" id="1_gxo56"]
 [ext_resource type="Script" path="res://GameFiles/BaseGame/GameController.gd" id="2_1l0k2"]
@@ -6,19 +6,23 @@
 [ext_resource type="PackedScene" uid="uid://n3m7uva4mbvp" path="res://PlayerCharacters/Fighter/Fighter.tscn" id="2_k3n35"]
 [ext_resource type="Script" path="res://Levels/LevelManager.gd" id="2_wy3j6"]
 [ext_resource type="PackedScene" uid="uid://dn014kb0cft1a" path="res://GameFiles/HUD/hud.tscn" id="3_1yx1l"]
+[ext_resource type="Script" path="res://Events/EventManager.gd" id="4_fij4x"]
 
-[node name="BaseGame" type="Node" groups=["baseGame"]]
+[node name="BaseGame" type="Node"]
 script = ExtResource("1_gxo56")
 
-[node name="GameController" type="Node" parent="." groups=["baseGame"]]
+[node name="GameController" type="Node" parent="."]
 script = ExtResource("2_1l0k2")
 
-[node name="LevelManager" type="Node" parent="GameController" groups=["baseGame"]]
+[node name="LevelManager" type="Node" parent="GameController"]
 script = ExtResource("2_wy3j6")
+
+[node name="EventsManager" type="Node" parent="GameController"]
+script = ExtResource("4_fij4x")
 
 [node name="Hud" parent="GameController" instance=ExtResource("3_1yx1l")]
 
-[node name="Party" type="Node2D" parent="GameController" groups=["baseGame"]]
+[node name="Party" type="Node2D" parent="GameController"]
 script = ExtResource("2_df4py")
 
 [node name="Fighter" parent="GameController/Party" instance=ExtResource("2_k3n35")]

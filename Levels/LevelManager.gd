@@ -11,6 +11,7 @@ var currentLevel
 @onready var partyLeader = get_parent().get_node("Party").get_child(0)
 
 func _ready() -> void:
+	randomize()
 	pass
 
 func load_level(stageNumber : int, levelNumber : int): #add storyteller
@@ -24,7 +25,6 @@ func load_level(stageNumber : int, levelNumber : int): #add storyteller
 	add_child(currentScene)
 
 func build_level_events():
-	print("build_level_events() called...")
 	#event_chance,
 	#enemy_chance,
 	#treasure_chance,
@@ -34,8 +34,9 @@ func build_level_events():
 	for event in currentScene.eventLevels:
 		assert(currentScene.eventLevels[event] != null, "stage %s - level %s - EventLevel enum %s  is null!" % [currentStage, currentLevel, event])
 	for i in range(0,currentScene.eventLevels[event.level.stage_length], currentScene.eventLevels[event.level.distance_per_chance_roll]):
-		var eventRoll = randi() % sumOfRollValues
+		var eventRoll = randi_range(0, sumOfRollValues)
 		var rollResult = get_roll_result(eventRoll)
+		var x_location_for_event = i * currentScene.eventLevels[event.level.distance_per_chance_roll]
 		match rollResult: 
 			event.level.event_chance:
 				print("event")
@@ -51,16 +52,16 @@ func build_level_events():
 
 func get_roll_result(eventRoll : int) -> int:
 	var eventMin : int = 0
-	var eventMax : int
-	var isEvent : bool
+	var eventMax : int = 0
+	var isEvent : bool = false
 	
 	for eventName in currentScene.eventLevels:
-		isEvent = eventName != event.level.distance_per_chance_roll && eventName != event.level.stage_length
+		isEvent = (eventName != event.level.distance_per_chance_roll) && (eventName != event.level.stage_length)
 		eventMax = eventMin + currentScene.eventLevels[eventName]
 		if !isEvent:
 			print("skipping %s as intended..." % eventName)
 			pass # NOP
-		elif eventRoll > eventMin && eventRoll < eventMax:
+		elif eventRoll >= eventMin && eventRoll < eventMax:
 			return eventName
 		
 		if isEvent:
